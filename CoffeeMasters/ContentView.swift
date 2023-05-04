@@ -10,21 +10,30 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-       OffersPage()
+        TabView {
+            MenuPage()
+                .tabItem {
+                    Image(systemName: "cup.and.saucer")
+                    Text("Menu")
+                }
+            OffersPage()
+                .tabItem {
+                    Image(systemName: "tag")
+                    Text("Offers")
+                }
+            OrdersPage()
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Orders")
+                }
+            InfoPage()
+                .tabItem {
+                    Image(systemName: "info")
+                    Text("Info")
+                }
+        }
     }
 }
-
-//struct Greeting: View {
-//    @State var name = ""
-//
-//    var body: some View {
-//        VStack {
-//            TextField("Enter your name", text: $name)
-//                .padding(12.0)
-//            Text("Hello \(name)")
-//        }
-//    }
-//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
